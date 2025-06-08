@@ -1,0 +1,665 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/* open-sans-regular - cyrillic_cyrillic-ext_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/open-sans-v43-cyrillic_cyrillic-ext_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-600 - cyrillic_cyrillic-ext_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/open-sans-v43-cyrillic_cyrillic-ext_latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-700 - cyrillic_cyrillic-ext_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/open-sans-v43-cyrillic_cyrillic-ext_latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+/* montserrat-regular - cyrillic_cyrillic-ext_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/montserrat-v30-cyrillic_cyrillic-ext_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-500 - cyrillic_cyrillic-ext_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/montserrat-v30-cyrillic_cyrillic-ext_latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-600 - cyrillic_cyrillic-ext_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/montserrat-v30-cyrillic_cyrillic-ext_latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* inter-regular - cyrillic_cyrillic-ext_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/inter-v19-cyrillic_cyrillic-ext_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-500 - cyrillic_cyrillic-ext_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/inter-v19-cyrillic_cyrillic-ext_latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-600 - cyrillic_cyrillic-ext_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/inter-v19-cyrillic_cyrillic-ext_latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+/* manrope-600 - cyrillic_cyrillic-ext_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/manrope-v19-cyrillic_cyrillic-ext_latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+
+
+
+
+
+
+
+
+
+:root {
+	--color-1: #005c9c;
+	--color-2: #002d47;
+	--color-3: #4f8fcc;
+	--color-4: #96caec;
+	--color-5: #82b5e5;
+	--color-6: #a0afc4;
+	--color-7: #232323;
+	--red: #f67277;
+	--green: #a0c246;
+	--orange: #ffa837;
+	--aquamarine: #27b9b2;
+	--white: #fff;
+    --font-family: "Open Sans", sans-serif;
+    --second-family: "Montserrat", sans-serif;
+    --third-family: "Inter", sans-serif;
+    --font3: "Manrope", sans-serif;
+}
+
+
+
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+}
+
+.content-area {
+    padding: 0 30px;
+}
+
+
+
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 281px 1fr;
+}
+
+
+
+
+
+
+
+/* header start */
+
+
+.main-header-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header {
+    border-bottom: 1px solid #e6eff5;
+    padding: 20px 30px;
+}
+
+.main-header-cont > :first-child h1 {
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 26px;
+    color: var(--color-2);
+}
+
+.search form {
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+    background: #f5f7fa;
+    padding: 15px 25px;
+    gap: 15px;
+}
+
+.search form input, .search form input::placeholder {
+    font-weight: 400;
+    font-size: 15px;
+    color: #8ba3cb;
+}
+
+.search form input {
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.main-header-cont > :nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.settings a, .notification button {
+    border-radius: 100%;
+    background: #f5f7fa;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.avatar img {
+    width: 100%;
+    max-width: 60px;
+    max-height: 60px;
+    border-radius: 100%;
+}
+
+
+/* header end */
+
+
+
+
+
+
+
+/* navbar start */
+
+.sidebar {
+    border-right: 1px solid #e6eff5;
+    min-height: 100vh;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+    padding: 31px 0;
+}
+
+.sidebar nav {
+    padding: 29px 19px;
+}
+
+.sidebar nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+}
+
+.sidebar nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--color-6);
+    text-decoration: none;
+}
+
+.sidebar nav ul li a svg {
+    min-width: 27px;
+}
+
+/* navbar end */
+
+.content-area {
+    padding-top: 22px;
+    background: #f5f7fa;
+    min-height: calc(100vh - 103px);
+}
+
+
+/* home start */
+
+.stories {
+    display: flex;
+    gap: 16px;
+}
+
+.stories a {
+    flex: 1;
+    display: block;
+    min-height: 204px;
+    min-width: 204px;
+    max-width: 204px;
+    display: flex;
+    align-items: flex-end;
+    padding: 23px 14px;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.stories > :first-child {
+    background: url('./images/s-1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.stories > :nth-child(2) {
+    background: url('./images/s-2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.stories > :nth-child(3) {
+    background: url('./images/s-3.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.stories > :nth-child(4) {
+    background: url('./images/s-4.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.stories > :nth-child(5) {
+    background: url('./images/s-5.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+
+.home-info {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 17px;
+    margin-top: 21px;
+}
+
+.home-info-1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 17px;
+}
+
+.home-info-1 a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--color-7);
+    background: var(--white);
+    border-radius: 25px;
+    padding: 25px 44px;
+    gap: 17px;
+}
+
+
+.home-info-2 {
+    background: linear-gradient(136deg, #78b6e2 0%, #96caec 100%);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.home-info-2_top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 26px 23px 13px 23px;
+    gap: 25px;
+}
+
+.home-info-2_top h3 {
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--white);
+}
+
+.home-info-2_top div > :first-child {
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--white);
+}
+
+.home-info-2_top div > :nth-child(2) {
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--white);
+}
+
+
+.home-info-2_top div > :nth-child(2) span {
+    font-size: 16px;
+}
+
+.home-info-2_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 21px 26px 22px 26px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%);
+}
+
+
+.home-info-2_bottom > :first-child > :first-child {
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--white);
+    margin-bottom: 3px;
+}
+
+.home-info-2_bottom > :first-child > :last-child {
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--white);
+}
+
+.home-info-2_bottom a {
+    font-weight: 400;
+    font-size: 12px;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-align: right;
+    color: var(--white);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.widget-tabs { display: flex; gap: 32px; }
+
+.tab-item {
+    padding: 5px 13px; 
+    border-bottom: 3px solid transparent; 
+    margin-bottom: -2px;
+    transition: color 0.2s, border-color 0.2s;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--color-6);
+    text-decoration: none;
+}
+.tab-item:hover { 
+    color: var(--color-3); 
+}
+
+.tab-item.active { 
+    color: var(--color-3);
+    border-bottom-color: var(--color-3);
+}
+.filter-button {
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    background-color: transparent;
+    border: none; 
+    cursor: pointer; 
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--color-3);
+}
+.filter-icon { 
+    width: 20px; 
+    height: 20px; 
+}
+
+
+
+.widget-footer { 
+    margin-top: 12px; 
+    padding-bottom: 25px;
+}
+
+.pagination { 
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: center; 
+    user-select: none; 
+}
+
+.pagination-link {
+    font-family: var(--third-family);
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--color-3);
+    padding: 11px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.pagination-link.nav-arrow { 
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.pagination-link:hover { 
+    background-color: #eef2ff; 
+}
+
+.pagination-link.active { 
+    background: var(--color-3);
+    color: var(--white);
+    cursor: default; 
+}
+
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block; 
+}
+
+.placeholder {
+    padding: 40px; 
+    text-align: center; 
+    color: #6b7280; 
+    font-size: 16px;
+    border: 1px dashed #e5e7eb; 
+    border-radius: 12px; 
+    margin-top: 16px;
+}
+
+
+
+
+
+.appointments-widget {
+    margin-top: 24px;
+
+}
+
+
+.appointments-table th {
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--color-5);
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.appointments-table thead tr {
+    border-bottom: 1px solid #e6eff5;
+}
+
+.tr-1 a {
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: var(--orange);
+    text-decoration: none;
+}
+
+.tr-1 > :not(:last-child) {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--color-7);
+}
+
+.tr-1 td {
+    padding: 23px 0;
+}
+
+.appointments-table {
+    width: 100%;
+    
+}
+
+.appointments-table-cont {
+background: var(--white);
+    padding: 22px 27px 10px 29px;
+    border-radius: 25px;
+}
+
+.appointments-table tbody > :not(:last-child) {
+    border-bottom: 1px solid #e6eff5;
+
+}
+
+
+/* home end */
+

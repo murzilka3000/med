@@ -663,3 +663,45 @@ background: var(--white);
 
 /* home end */
 
+
+
+
+
+/* appointment-booking start */
+
+
+.widget-header-filters {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.tr-1 > :first-child {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--color-7);
+}
+
+.widget-header-filters div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border: 1px solid #dfeaf2;
+    border-radius: 15px;
+    background: var(--white);
+    padding: 16px 21px;
+    cursor: pointer;
+}
+
+.widget-header-filters p {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--color-5);
+}
+
+
+
+/* appointment-booking end */
+

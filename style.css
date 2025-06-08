@@ -702,6 +702,100 @@ background: var(--white);
 }
 
 
+.appointments-table td[data-label="Дата и время"] {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.tbody-2 .tr-1 > :last-child a {
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    color: var(--color-2);
+    border: 1px solid var(--color-2);
+    border-radius: 50px;
+    padding: 8px 25px;
+}
+
+
 
 /* appointment-booking end */
 
+
+
+
+
+/* personal-recommendations start */
+
+
+.personal-cont {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.personal-cont a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--white);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 25px 45px;
+    min-height: 283px;
+    border-radius: 25px;
+
+}
+
+.personal-cont > :first-child {
+    background: url('./images/personal-1.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.personal-cont > :nth-child(2) {
+    background: url('./images/personal-2.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.personal-cont > :nth-child(3) {
+    background: url('./images/personal-3.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.personal-cont > :nth-child(4) {
+    background: url('./images/personal-4.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.h2 {
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--color-2);
+    margin-top: 34px;
+}
+
+.personal {
+    padding-bottom: 50px;
+}
+
+
+.personal-cont-2 {
+    margin-top: 7px;
+}
+
+
+
+/* personal-recommendations end */

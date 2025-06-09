@@ -683,7 +683,7 @@ background: var(--white);
     color: var(--color-7);
 }
 
-.widget-header-filters div {
+.widget-header-filters div, .drop {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -894,7 +894,7 @@ background: var(--white);
     align-items: flex-start;
 }
 
-.rev-cont label {
+.rev-cont label, .support-chat label {
     font-family: var(--second-family);
     font-weight: 600;
     font-size: 16px;
@@ -902,13 +902,8 @@ background: var(--white);
     margin-bottom: 10px;
 }
 
-.rev-cont textarea {
-    resize: none;
-    height: 198px;
-    padding: 16px 20px;
-}
 
-.rev-cont textarea {
+textarea {
     font-weight: 400;
     font-size: 15px;
     color: var(--color-7);
@@ -918,10 +913,13 @@ background: var(--white);
     outline: none;
     width: 100%;
     margin-bottom: 23px;
+    resize: none;
+    height: 198px;
+    padding: 16px 20px;
 }
 
 
-.rev-cont input[type="submit"] {
+input[type="submit"] {
     background: var(--color-1);
     border-radius: 15px;
     padding: 14px 39px;
@@ -948,3 +946,203 @@ background: var(--white);
 }
 
 /* rev end */
+
+
+
+
+/* support start */
+
+.support-cont {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;  
+}
+
+.support-cont a {
+    border-radius: 25px;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 25px 44px;
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--color-7);
+    text-decoration: none;
+}
+
+
+.drop {
+    margin: 22px 0;
+}
+
+
+.m {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hidden {
+    display: none;
+    flex-direction: column;
+    margin-top: 23px;
+}
+
+.hidden input {
+    border: 1px solid #dfeaf2;
+    border-radius: 15px;
+}
+
+.hidden input, .hidden input::placeholder {
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--color-7);
+    outline: none;
+    padding: 16px 20px;
+}
+
+/* support end */
+
+
+
+
+
+
+
+/* chat start */
+
+
+
+
+.chat-widget {
+    background: var(--white);
+    border-radius: 25px;
+    padding: 40px;
+    width: 100%;
+    position: relative;
+    min-height: calc(100vh - 153px);
+    max-height: calc(100vh - 153px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    contain: layout style;
+    overflow: hidden;
+
+}
+
+.mess {
+    overflow-y: auto;
+    max-height: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.me {
+    align-self: flex-end;
+}
+
+
+.scroll-down-arrow {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid #a0b4d7;
+    border-bottom: 2px solid #a0b4d7;
+    transform: rotate(-45deg);
+    opacity: 0.7;
+}
+
+
+.message-container {
+    margin-bottom: 15px;
+}
+
+.sender-name {
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--color-5);
+    margin: 0 0 8px 0;
+}
+
+.message-bubble {
+    border: 1px solid #dfeaf2;
+    border-radius: 15px;
+    padding: 16px 20px;
+    position: relative; 
+    padding-bottom: 40px;
+    max-width: 468px;
+}
+
+.message-bubble p {
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--color-7);
+}
+
+.message-bubble p:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+.status-icon {
+    position: absolute;
+    bottom: 10px;
+    left: 16px;
+}
+
+.status-icon svg path {
+    stroke: #77d353; 
+}
+
+
+.chat-input-area {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dfeaf2;
+    border-radius: 15px;
+}
+
+.chat-input-area input {
+    flex-grow: 1; 
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 16px 20px;
+    color: #333;
+}
+
+.chat-input-area input::placeholder, .chat-input-area input {
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--color-7);
+}
+
+.chat-input-area button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background: var(--color-1);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+
+
+.one-arr {
+    display: none;
+}
+
+
+
+/* chat end */

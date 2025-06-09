@@ -33,33 +33,47 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-ymaps.ready(init);
+// ymaps.ready(init);
 
-function init() {
-    const points = [
-        { coords: [55.871147, 37.662231], title: 'м. Бабушкинская' },
-        { coords: [55.642517, 37.526233], title: 'м. Беляево' },
-        { coords: [55.679780, 37.510119], title: 'м. Новаторская' },
-        { coords: [55.744953, 37.587399], title: 'м. Смоленская' },
-        { coords: [55.663116, 37.482083], title: 'м. Юго-Западная' }
-    ];
+// function init() {
+//     const points = [
+//         { coords: [55.871147, 37.662231], title: 'м. Бабушкинская' },
+//         { coords: [55.642517, 37.526233], title: 'м. Беляево' },
+//         { coords: [55.679780, 37.510119], title: 'м. Новаторская' },
+//         { coords: [55.744953, 37.587399], title: 'м. Смоленская' },
+//         { coords: [55.663116, 37.482083], title: 'м. Юго-Западная' }
+//     ];
 
-    const myMap = new ymaps.Map("map", {
-        center: [55.75, 37.62],
-        zoom: 10,
-        controls: ['zoomControl']
-    });
+//     const myMap = new ymaps.Map("map", {
+//         center: [55.75, 37.62],
+//         zoom: 10,
+//         controls: ['zoomControl']
+//     });
 
-    points.forEach(point => {
-        const placemark = new ymaps.Placemark(point.coords, {
-            hintContent: point.title,
-            balloonContent: point.title
-        }, {
-            preset: 'islands#blueCircleIcon'
-        });
+//     points.forEach(point => {
+//         const placemark = new ymaps.Placemark(point.coords, {
+//             hintContent: point.title,
+//             balloonContent: point.title
+//         }, {
+//             preset: 'islands#blueCircleIcon'
+//         });
 
-        myMap.geoObjects.add(placemark);
-    });
+//         myMap.geoObjects.add(placemark);
+//     });
     
-    myMap.behaviors.disable('scrollZoom');
-}
+//     myMap.behaviors.disable('scrollZoom');
+// }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const checkbox = document.getElementById('toggle-email');
+    const emailField = document.getElementById('email-field');
+
+    checkbox.addEventListener('change', function () {
+        if (checkbox.checked) {
+            emailField.style.display = 'flex';
+        } else {
+            emailField.style.display = 'none';
+        }
+    });
+});

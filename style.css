@@ -1490,10 +1490,21 @@ input[type="submit"] {
     display: none;
 }
 
+.tests-mob {
+    display: none;
+}
+
 
 @media screen and (max-width: 945px) {
-    .home-info {
+    .home-info, .widget-header-filters {
         display: none;
+    }
+
+    .tests-mob {
+        border-radius: 15px;
+        background: var(--white);
+        padding: 12px 10px 18px 10px;
+        display: block;
     }
 
     .location-item div {
@@ -1898,6 +1909,44 @@ input[type="submit"] {
         padding: 5px 0;
     }
 
+    .appointments-widget {
+        margin-top: 0;
+    }
+
+
+
+
+
+
+    .map-12 table,
+    .map-12 thead,
+    .map-12 tbody,
+    .map-12 tr,
+    .map-12 th,
+    .map-12 td {
+        display: block;
+        width: 100%;
+    }
+
+    .map-12 td {
+        text-align: left;
+        border: none;
+        position: relative;
+    }
+
     
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

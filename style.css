@@ -171,6 +171,7 @@ body {
 
 .content-area {
     padding: 0 30px;
+    padding-bottom: 30px;
 }
 
 
@@ -180,10 +181,18 @@ body {
     grid-template-columns: 281px 1fr;
 }
 
+* {
+    transition: all .3s ease-in-out;
+}
 
 
-
-
+button,
+label,
+input[type="checkbox"] + label,
+a,
+.icon {
+  user-select: none;
+}
 
 
 /* header start */
@@ -242,6 +251,7 @@ body {
     align-items: center;
     justify-content: center;
     border: none;
+    cursor: pointer;
 }
 
 .avatar img {
@@ -338,40 +348,7 @@ body {
     text-decoration: none;
 }
 
-.stories > :first-child {
-    background: url('./images/s-1.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
 
-.stories > :nth-child(2) {
-    background: url('./images/s-2.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-.stories > :nth-child(3) {
-    background: url('./images/s-3.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-.stories > :nth-child(4) {
-    background: url('./images/s-4.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-.stories > :nth-child(5) {
-    background: url('./images/s-5.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
 
 
 
@@ -545,7 +522,15 @@ body {
     font-weight: 600;
     font-size: 18px;
     color: var(--color-3);
+    border-radius: 10px;
+    padding: 8px 13px;
 }
+
+
+.filter-button:hover {
+    background: rgba(150, 202, 236, 0.2);
+}
+
 .filter-icon { 
     width: 20px; 
     height: 20px; 
@@ -555,7 +540,6 @@ body {
 
 .widget-footer { 
     margin-top: 12px; 
-    padding-bottom: 25px;
 }
 
 .pagination { 
@@ -563,6 +547,7 @@ body {
     justify-content: flex-end; 
     align-items: center; 
     user-select: none; 
+    gap: 5px;
 }
 
 .pagination-link {
@@ -585,6 +570,8 @@ body {
 .pagination-link:hover { 
     background-color: #eef2ff; 
 }
+
+
 
 .pagination-link.active { 
     background: var(--color-3);
@@ -642,6 +629,7 @@ body {
     text-decoration: none;
     border: none;
     background: none;
+    cursor: pointer;
 }
 
 .tr-1 > :not(:last-child) {
@@ -693,7 +681,9 @@ background: var(--white);
     color: var(--color-7);
 }
 
-.widget-header-filters div, .drop {
+.widget-header-filters .drop, 
+.tests-mob .drop, .mob .drop,
+.support-chat .drop{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -703,12 +693,58 @@ background: var(--white);
     background: var(--white);
     padding: 16px 21px;
     cursor: pointer;
+    margin: 0;
 }
 
-.widget-header-filters p {
+.support-chat .drop {
+    margin-top: 10px;
+    margin-bottom: 22px;
+}
+
+.tests-mob .drop, .mob .drop{
+    padding: 9px 15px;
+    border-radius: 7px;
+}
+
+.tests-mob .dropdown-list, .mob .dropdown-list{
+    top: 35px;
+    border-radius: 0 0 7px 7px;
+}
+
+.tests-mob .drop-cont, .mob .drop-cont{
+    margin-bottom: 11px;
+}
+
+.tests-mob .drop-cont.open .drop, .mob .drop-cont.open .drop{
+    border-radius: 7px 7px 0 0;
+}
+
+
+.mob .drop p,
+.tests-mob  .drop p{
     font-weight: 600;
-    font-size: 15px;
-    color: var(--color-5);
+    font-size: 12px;
+    color: var(--color-3);
+}
+
+.mob .dropdown-list li,
+.tests-mob .dropdown-list li{
+    padding: 10px 0;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--color-7);
+}
+
+
+
+
+
+
+.widget-header-filters p {
+    font-weight: 600!important;
+    font-size: 15px!important;
+    color: var(--color-5)!important;
 }
 
 
@@ -749,9 +785,6 @@ background: var(--white);
 
 .personal-cont a {
     text-decoration: none;
-    font-weight: 600;
-    font-size: 22px;
-    color: var(--white);
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -759,6 +792,13 @@ background: var(--white);
     min-height: 283px;
     border-radius: 25px;
 
+}
+
+.personal-cont a p {
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--white);
+    max-width: 250px;
 }
 
 .personal-cont > :first-child {
@@ -866,10 +906,7 @@ background: var(--white);
     flex: 1;
 }
 
-#map {
-    width: 100%;
-    height: 100%;
-}
+
 
 @media (max-width: 992px) {
     .locations-container {
@@ -930,6 +967,7 @@ input[type="submit"] {
     font-size: 18px;
     text-align: center;
     color: var(--white);
+    cursor: pointer;
 }
 
 .flex {
@@ -1142,9 +1180,6 @@ input[type="submit"] {
 
 
 
-.one-arr {
-    display: none;
-}
 
 
 
@@ -1285,7 +1320,7 @@ input[type="submit"] {
             margin-bottom: 8px;
         }
 
-        .popup-step h3 {
+        .popup-step h3, .popup-content h3 {
                 font-family: var(--second-family);
                 font-weight: 600;
                 font-size: 26px;
@@ -1891,9 +1926,12 @@ input[type="submit"] {
 
     .personal-cont a {
         min-height: 151px;
-        font-size: 12px;
         padding: 17px 10px;
-        padding-left: 200px;
+    }
+
+    .personal-cont a p {
+        font-size: 12px;
+        max-width: 140px;
     }
 
     .h2  {
@@ -1944,7 +1982,707 @@ input[type="submit"] {
 
 
 
+.sidebar nav li:hover * {
+    fill: var(--color-3);
+    color: var(--color-3);
+}
 
+
+
+
+.sidebar .active * {
+    fill: var(--color-3);
+    color: var(--color-3);
+}
+
+
+.tbody-2 .tr-1 > :last-child a:hover {
+    color: var(--white);
+    background: var(--color-2);
+}
+
+
+
+
+
+
+.tr-1 button:hover {
+    color: var(--red);
+}
+
+#btn-reschedule:hover {
+    background: var(--aquamarine);
+    color: var(--white);
+}
+
+#btn-cancel:hover {
+    background: var(--red);
+    color: var(--white);
+}
+
+#btn-reschedule:hover *,
+#btn-cancel:hover * {
+stroke: var(--white);
+}
+
+
+
+#step-2 button:hover, #step-3-medcenter button:hover {
+    border: 1px solid var(--color-3);
+}
+
+.pagination-link:hover {
+    background: rgba(150, 202, 236, 0.2);
+}
+
+
+
+
+.personal-cont > :first-child:hover {
+    background: url('./images/h1.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.personal-cont > :nth-child(2):hover {
+    background: url('./images/h2.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.personal-cont > :nth-child(3):hover {
+    background: url('./images/h3.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.personal-cont > :nth-child(4):hover {
+    background: url('./images/h4.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+input[type="submit"]:hover,
+.chat-input-area button:hover {
+    background: var(--color-2);
+}
+
+
+
+
+.support-cont a {
+    border: 1px solid var(--white);
+}
+
+.support-cont a:hover {
+    border: 1px solid var(--color-4);
+}
+
+
+
+.one-arr path {
+    stroke: var(--color-6)!important
+}
+
+
+
+
+
+
+.drop-cont {
+    position: relative;
+}
+
+
+.dropdown-list {
+  display: none;
+  list-style: none;
+  padding: 0;
+  background: white;
+  border-bottom: 1px solid #dfeaf2;
+  border-right: 1px solid #dfeaf2;
+  border-left: 1px solid #dfeaf2;
+  position: absolute;
+  z-index: 10;
+  top: 41px;
+  width: 100%;
+  border-radius: 0 0 15px 15px;
+  padding: 0px 21px 6px 21px;
+}
+
+.dropdown-list li {
+    padding: 10px 0;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--color-7);
+}
+
+
+
+.drop p {
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--color-7);
+}
+
+
+.dropdown-list {
+  display: none;
+}
+
+.drop-cont.open .dropdown-list {
+  display: block;
+}
+
+.drop-cont.open .drop {
+    border-top: 1px solid #dfeaf2;
+    border-right: 1px solid #dfeaf2;
+    border-left: 1px solid #dfeaf2;
+    border-bottom: 1px solid transparent;
+    border-radius: 15px 15px 0 0;
+}
+
+
+.drop-cont.open .drop .arr-drop {
+    transform: rotate(180deg);
+}
+
+
+
+@media screen and (max-width: 945px) {
+    .dropdown-list {
+        padding: 0 15px;
+    }
+}
+
+
+.home-info-1 a {
+    border: 1px solid #fff;
+}
+
+
+.home-info-1 a:hover {
+    border: 1px solid var(--color-4);
+}
+
+
+
+
+.mob {
+    display: none;
+}
+
+.desk {
+    display: block;
+}
+
+
+@media screen and (max-width: 945px) { 
+    .mob {
+        display: block;
+    }
+
+    .desk {
+        display: none;
+    }
+
+    .mob-s {
+        padding: 0 25px;
+        margin-bottom: 17px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.map-area2 {
+    flex: 1;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+}
+
+
+
+@media screen and (max-width: 600px) {
+        .popup-content {
+            width: 450px;
+            padding: 31px 44px 46px 44px;
+        }
+}
+
+@media screen and (max-width: 500px) {
+        .popup-content {
+            width: 350px;
+            padding: 30px;
+        }
+}
+
+.home-mob-content-button {
+    margin-bottom: 16px;
+}
+
+
+
+
+
+
+
+.widget-content-wrapper .widget-header-filters {
+    display: none;
+    transition: all 0.3s ease; 
+}
+
+.widget-header-filters.active {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.drop-cont {
+    flex: 1;
+}
+
+.tr-1 > :last-child, .appointments-table thead tr > :last-child {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+.support-chat label   {
+    margin-bottom: 0;
+}
+ #email-field label {
+        margin-bottom: 10px;
+    }
+
+@media screen and (max-width: 767px) {
+    .support-chat .drop {
+        margin-top: 7px;
+        margin-bottom: 16px;
+        padding: 12px 15px;
+    }
+
+    .support-chat .drop p,
+    .support-chat .dropdown-list li {
+        font-size: 12px;
+    }
+
+    .support-chat  .dropdown-list {
+        top: 35px;
+    }
+
+   
+}
+
+
+
+.viev {
+    border: none;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+
+.not-viev {
+    border: 5px solid #fdd160;
+}
+
+
+
+
+
+.stories a:hover {
+    background: linear-gradient(90deg, #4F8FCC 0%, #0E4477 100%);
+}
+
+
+
+.location-item {
+    padding: 16px 20px;
+    border-radius: 25px;
+}
+
+.location-item.is-active,
+.location-item:hover {
+    background: #fafbfd;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.location-item {
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+
+@media screen and (max-width: 767px) {
+        .location-item {
+            padding: 0;
+            border-radius: 0;
+        }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.popup-overlay2 {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); 
+    z-index: 1000; 
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-overlay2.active {
+    display: flex; 
+}
+
+
+
+.popup-overlay #step-1 .popup-button {
+    border: 1px solid #dfeaf2;
+}
+
+.popup-overlay #step-1 .popup-button:hover {
+    border: 1px solid var(--color-3);
+}
+
+.popup-overlay #step-1 .popup-button {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--color-3);
+}
+
+
+.no-center * {
+    text-align: left!important;
+}
+
+
+
+
+
+
+
+
+
+
+
+ .custom-balloon {
+    background-color: #fff;
+    border: 1px solid var(--color-4); /* Светло-голубая рамка */
+    border-radius: 20px;
+    padding: 12px 17px 17px 17px;
+    min-width: 305px;
+}
+
+/* Стили для элементов внутри балуна */
+.custom-balloon .address,
+.custom-balloon .address-details,
+.custom-balloon .work-hours {
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--color-7);
+}
+
+.custom-balloon .route-link {
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s ease;
+    font-weight: 600;
+font-size: 10px;
+color: var(--color-3);
+}
+
+.custom-balloon .route-link:hover {
+    color: #005a9e;
+    border-bottom-color: #005a9e;   
+}
+
+
+
+
+.ymaps-2-1-79-balloon__layout, .ymaps-2-1-79-balloon__content {
+    background: none!important;
+}
+
+
+.ymaps-2-1-79-balloon {
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0), 0 5px 15px -7px rgba(0, 0, 0, 0)!important;
+}
+
+.ymaps-2-1-79-balloon__close-button {
+    display: none;
+}
+
+
+.ymaps-2-1-79-balloon__tail:after {
+    background-color: transparent!important;
+    display: none!important;
+}
+
+.ymaps-2-1-79-balloon_to_top .ymaps-2-1-79-balloon__tail {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (hover: none) and (pointer: coarse) {
+
+    .tab-item:hover {
+        color: var(--color-6); /* Исходный цвет */
+    }
+
+    .filter-button:hover {
+        background-color: transparent; /* Исходный фон */
+    }
+
+    .pagination-link:hover {
+        background-color: transparent; /* Исходный фон */
+    }
+
+    .sidebar nav li:hover * {
+        fill: var(--color-6);   /* Исходный fill */
+        color: var(--color-6);  /* Исходный цвет */
+    }
+
+    .tbody-2 .tr-1 > :last-child a:hover {
+        color: var(--color-2);   /* Исходный цвет */
+        background: transparent; /* Исходный фон */
+    }
+
+    .tr-1 button:hover {
+        color: var(--orange); /* Исходный цвет */
+    }
+
+    #btn-reschedule:hover {
+        background: none;        /* Исходный фон */
+        color: var(--aquamarine); /* Исходный цвет */
+    }
+
+    #btn-cancel:hover {
+        background: none;    /* Исходный фон */
+        color: var(--red);   /* Исходный цвет */
+    }
+
+    #btn-reschedule:hover *,
+    #btn-cancel:hover * {
+        stroke: initial; /* Сброс к исходному значению (зависит от SVG) */
+    }
+
+    #step-2 button:hover,
+    #step-3-medcenter button:hover {
+        border: 1px solid #dfeaf2; /* Исходная рамка */
+    }
+
+    input[type="submit"]:hover,
+    .chat-input-area button:hover {
+        background: var(--color-1); /* Исходный фон */
+    }
+
+    .support-cont a:hover {
+        border: 1px solid var(--white); /* Исходная рамка */
+    }
+
+    .home-info-1 a:hover {
+        border: 1px solid var(--white); /* Исходная рамка */
+    }
+
+    .stories a:hover {
+        background: initial; /* Сброс фонового градиента к исходному (если был) */
+    }
+
+    .location-item:hover {
+        background: initial; /* Сброс фона к исходному (если был) */
+    }
+
+    .custom-balloon .route-link:hover {
+        color: var(--color-3); /* Исходный цвет */
+        border-bottom-color: transparent; /* Исходный цвет рамки (если был) */
+    }
+
+    .popup-overlay #step-1 .popup-button:hover {
+        border: 1px solid #dfeaf2; /* Исходная рамка */
+    }
+
+
+    .personal-cont > :first-child:hover {
+        background: url('./images/personal-1.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .personal-cont > :nth-child(2):hover {
+        background: url('./images/personal-2.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .personal-cont > :nth-child(3):hover {
+        background: url('./images/personal-3.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .personal-cont > :nth-child(4):hover {
+        background: url('./images/personal-4.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+
+   
+
+    .tab-item:active {
+        color: var(--color-3);
+    }
+
+    .filter-button:active {
+        background: rgba(150, 202, 236, 0.2);
+    }
+
+    .pagination-link:active {
+        background-color: #eef2ff;
+    }
+
+    .sidebar nav li:active * {
+        fill: var(--color-3);
+        color: var(--color-3);
+    }
+
+    .tbody-2 .tr-1 > :last-child a:active {
+        color: var(--white);
+        background: var(--color-2);
+    }
+
+    .tr-1 button:active {
+        color: var(--red);
+    }
+
+    #btn-reschedule:active {
+        background: var(--aquamarine);
+        color: var(--white);
+    }
+
+    #btn-cancel:active {
+        background: var(--red);
+        color: var(--white);
+    }
+
+    #btn-reschedule:active *,
+    #btn-cancel:active * {
+        stroke: var(--white);
+    }
+
+    #step-2 button:active,
+    #step-3-medcenter button:active {
+        border: 1px solid var(--color-3);
+    }
+
+    input[type="submit"]:active,
+    .chat-input-area button:active {
+        background: var(--color-2);
+    }
+
+    .support-cont a:active {
+        border: 1px solid var(--color-4);
+    }
+
+    .home-info-1 a:active {
+        border: 1px solid var(--color-4);
+    }
+
+    .stories a:active {
+        background: linear-gradient(90deg, #4F8FCC 0%, #0E4477 100%);
+    }
+
+    .location-item:active {
+        background: #fafbfd;
+    }
+
+    .custom-balloon .route-link:active {
+        color: #005a9e;
+        border-bottom-color: #005a9e;
+    }
+
+    .popup-overlay #step-1 .popup-button:active {
+        border: 1px solid var(--color-3);
+    }
+
+ 
+    .personal-cont > :first-child:active {
+        background: url('./images/h1.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .personal-cont > :nth-child(2):active {
+        background: url('./images/h2.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .personal-cont > :nth-child(3):active {
+        background: url('./images/h3.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .personal-cont > :nth-child(4):active {
+        background: url('./images/h4.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
 
 
 

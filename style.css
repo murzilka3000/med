@@ -181,9 +181,9 @@ body {
     grid-template-columns: 281px 1fr;
 }
 
-* {
+/* * {
     transition: all .3s ease-in-out;
-}
+} */
 
 
 button,
@@ -377,6 +377,7 @@ a,
     border-radius: 25px;
     padding: 25px 44px;
     gap: 17px;
+    transition: all ease-in-out .3s;
 }
 
 
@@ -503,6 +504,7 @@ a,
     font-size: 18px;
     color: var(--color-6);
     text-decoration: none;
+    transition: all ease-in-out .3s;
 }
 .tab-item:hover { 
     color: var(--color-3); 
@@ -524,6 +526,7 @@ a,
     color: var(--color-3);
     border-radius: 10px;
     padding: 8px 13px;
+    transition: all ease-in-out .3s;
 }
 
 
@@ -1980,7 +1983,9 @@ input[type="submit"] {
 
 
 
-
+.sidebar nav li * {
+    transition: all ease-in-out .3s;
+}
 
 .sidebar nav li:hover * {
     fill: var(--color-3);
@@ -1995,6 +2000,9 @@ input[type="submit"] {
     color: var(--color-3);
 }
 
+.tbody-2 .tr-1 > :last-child a {
+    transition: all ease-in-out .3s;
+}
 
 .tbody-2 .tr-1 > :last-child a:hover {
     color: var(--white);
@@ -2003,7 +2011,20 @@ input[type="submit"] {
 
 
 
-
+.tr-1 button,
+#btn-reschedule,
+#btn-cancel,
+#btn-reschedule,
+#btn-cancel,
+#step-2 button,
+#step-3-medcenter button,
+.pagination-link,
+.personal-cont > :first-child,
+.personal-cont > :nth-child(2),
+.personal-cont > :nth-child(3),
+.personal-cont > :nth-child(4) {
+    transition: all ease-in-out .3s;
+}
 
 
 .tr-1 button:hover {
@@ -2066,6 +2087,11 @@ stroke: var(--white);
     background-size: cover;
 }
 
+
+input[type="submit"],
+.support-cont a {
+    transition: all ease-in-out .3s;
+}
 
 input[type="submit"]:hover,
 .chat-input-area button:hover {
@@ -2312,7 +2338,9 @@ input[type="submit"]:hover,
 }
 
 
-
+.stories a {
+    transition: all ease-in-out .3s;
+}
 
 
 .stories a:hover {
@@ -2324,6 +2352,10 @@ input[type="submit"]:hover,
 .location-item {
     padding: 16px 20px;
     border-radius: 25px;
+}
+
+.location-item {
+    transition: all ease-in-out .3s;
 }
 
 .location-item.is-active,
@@ -2381,6 +2413,10 @@ input[type="submit"]:hover,
     border: 1px solid #dfeaf2;
 }
 
+.popup-overlay #step-1 .popup-button {
+    transition: all ease-in-out .3s;
+}
+
 .popup-overlay #step-1 .popup-button:hover {
     border: 1px solid var(--color-3);
 }
@@ -2432,6 +2468,11 @@ font-size: 10px;
 color: var(--color-3);
 }
 
+.custom-balloon .route-link {
+    transition: all ease-in-out.3s;
+}
+
+
 .custom-balloon .route-link:hover {
     color: #005a9e;
     border-bottom-color: #005a9e;   
@@ -2481,79 +2522,79 @@ color: var(--color-3);
 @media (hover: none) and (pointer: coarse) {
 
     .tab-item:hover {
-        color: var(--color-6); /* Исходный цвет */
+        color: var(--color-6); 
     }
 
     .filter-button:hover {
-        background-color: transparent; /* Исходный фон */
+        background-color: transparent; 
     }
 
     .pagination-link:hover {
-        background-color: transparent; /* Исходный фон */
+        background-color: transparent; 
     }
 
     .sidebar nav li:hover * {
-        fill: var(--color-6);   /* Исходный fill */
-        color: var(--color-6);  /* Исходный цвет */
+        fill: var(--color-6);  
+        color: var(--color-6);  
     }
 
     .tbody-2 .tr-1 > :last-child a:hover {
-        color: var(--color-2);   /* Исходный цвет */
-        background: transparent; /* Исходный фон */
+        color: var(--color-2);   
+        background: transparent; 
     }
 
     .tr-1 button:hover {
-        color: var(--orange); /* Исходный цвет */
+        color: var(--orange); 
     }
 
     #btn-reschedule:hover {
-        background: none;        /* Исходный фон */
-        color: var(--aquamarine); /* Исходный цвет */
+        background: none;        
+        color: var(--aquamarine); 
     }
 
     #btn-cancel:hover {
-        background: none;    /* Исходный фон */
-        color: var(--red);   /* Исходный цвет */
+        background: none;    
+        color: var(--red);   
     }
 
     #btn-reschedule:hover *,
     #btn-cancel:hover * {
-        stroke: initial; /* Сброс к исходному значению (зависит от SVG) */
+        stroke: initial; 
     }
 
     #step-2 button:hover,
     #step-3-medcenter button:hover {
-        border: 1px solid #dfeaf2; /* Исходная рамка */
+        border: 1px solid #dfeaf2; 
     }
 
     input[type="submit"]:hover,
     .chat-input-area button:hover {
-        background: var(--color-1); /* Исходный фон */
+        background: var(--color-1); 
     }
 
     .support-cont a:hover {
-        border: 1px solid var(--white); /* Исходная рамка */
+        border: 1px solid var(--white); 
     }
 
     .home-info-1 a:hover {
-        border: 1px solid var(--white); /* Исходная рамка */
+        border: 1px solid var(--white); 
     }
 
     .stories a:hover {
-        background: initial; /* Сброс фонового градиента к исходному (если был) */
+        background: initial;
     }
 
     .location-item:hover {
-        background: initial; /* Сброс фона к исходному (если был) */
+        background: initial; 
     }
 
     .custom-balloon .route-link:hover {
-        color: var(--color-3); /* Исходный цвет */
-        border-bottom-color: transparent; /* Исходный цвет рамки (если был) */
+        color: var(--color-3); 
+        border-bottom-color: transparent; 
     }
 
     .popup-overlay #step-1 .popup-button:hover {
-        border: 1px solid #dfeaf2; /* Исходная рамка */
+        border: 1px solid #dfeaf2; 
     }
 
 
@@ -2687,6 +2728,8 @@ color: var(--color-3);
         background-size: cover;
     }
 }
+
+
 
 
 
